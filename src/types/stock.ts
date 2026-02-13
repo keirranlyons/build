@@ -8,10 +8,19 @@ export interface Stock {
   volume24h: number;
   high24h: number;
   low24h: number;
+  open: number;
+  previousClose: number;
   sector: string;
   industry: string;
   exchange: string;
-  logo?: string;
+  pe?: number;
+  eps?: number;
+  yearHigh?: number;
+  yearLow?: number;
+  avgVolume?: number;
+  description?: string;
+  website?: string;
+  image?: string;
 }
 
 export interface IndustryGroup {
@@ -24,3 +33,5 @@ export interface IndustryGroup {
 
 export type SortField = 'name' | 'price' | 'changePercent24h' | 'marketCap' | 'volume24h';
 export type SortDirection = 'asc' | 'desc';
+
+export type DataStatus = 'loading' | 'ready' | 'error' | 'demo';
